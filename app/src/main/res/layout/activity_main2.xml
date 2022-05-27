@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_gravity="center"
+    android:gravity="center"
+    tools:context=".MainActivity2">
+
+    <Switch
+        android:id="@+id/switch_enable_bt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/bluetooth_on_off"
+        android:textSize="18sp" />
+
+    <FrameLayout
+        android:id="@+id/frame_message"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/bluetooth_off"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/frame_control"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/btn_enable_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:text="@string/start_search" />
+
+        <ProgressBar
+            android:id="@+id/pb_progress"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:indeterminate="true"
+            android:visibility="gone" />
+
+        <ListView
+            android:id="@+id/lv_bt_device"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"></ListView>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/frameLedControls"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+
+
+        <Button
+            android:id="@+id/btn_disconnect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:drawableStart="@drawable/ic_baseline_arrow_back_24"
+            android:drawableTint="@color/white"
+            android:theme="@style/AppTheme.MyButton1"
+            android:text="@string/disconnect" />
+
+
+        <Button
+            android:id="@+id/bt_Send"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_disconnect"
+            android:layout_marginTop="0dp"
+            android:text="Send" />
+
+        <Button
+            android:id="@+id/bt_Update"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_disconnect"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="128dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="0dp"
+            android:layout_toRightOf="@+id/bt_Send"
+            android:text="Update" />
+
+        <Button
+            android:id="@+id/bt_Confirm"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_disconnect"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="250dp"
+            android:layout_marginLeft="162dp"
+            android:layout_marginTop="0dp"
+            android:layout_toRightOf="@+id/bt_Send"
+            android:text="Confirm" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="100dp"
+            android:layout_marginStart="25dp"
+            android:layout_width="330dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="30dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="56dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:textStyle="bold"
+                        android:layout_marginEnd="30dp"
+                        android:text="Частично открыты"/>
+                    <ProgressBar
+                        android:id="@+id/progressbar"
+                        android:layout_marginEnd="30dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        android:max="100"
+                        android:progress="0"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tv_pt_open"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="%"/>
+                </LinearLayout>
+
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btn_a"
+                        android:layout_width="100dp"
+                        android:layout_height="30dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:theme="@style/AppTheme.MyButton1" />
+                    <Button
+                        android:id="@+id/btn_b"
+                        android:layout_width="100dp"
+                        android:layout_height="30dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:theme="@style/AppTheme.MyButton1" />
+                    <Button
+                        android:id="@+id/btn_c"
+                        android:layout_width="100dp"
+                        android:layout_height="30dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:theme="@style/AppTheme.MyButton1" />
+                    <Button
+                        android:id="@+id/btn_d"
+                        android:layout_width="100dp"
+                        android:layout_height="30dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:theme="@style/AppTheme.MyButton1" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="300dp">
+
+            <Button
+                android:id="@+id/btn_garage_value"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:drawableStart="@drawable/ic_baseline_numbers_24"
+                android:drawableTint="@color/white"
+
+                android:theme="@style/AppTheme.MyButton1" />
+
+            <Button
+                android:id="@+id/btn_garage_up"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:drawableStart="@drawable/ic_baseline_arrow_drop_up_24"
+                android:drawableTint="@color/white"
+                android:text="UP"
+
+                android:theme="@style/AppTheme.MyButton7" />
+
+            <Button
+                android:id="@+id/btn_garage_down"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:drawableStart="@drawable/ic_baseline_arrow_drop_down_24"
+                android:drawableTint="@color/white"
+                android:text="Down"
+                android:theme="@style/AppTheme.MyButton3" />
+        </LinearLayout>
+
+        <!--        <EditText-->
+        <!--            android:id="@+id/et_c"-->
+        <!--            android:layout_width="150sp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/bt_Send"-->
+        <!--            android:hint="c"-->
+        <!--            android:inputType="numberDecimal" />-->
+
+        <!--        <EditText-->
+        <!--            android:id="@+id/et_d"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/bt_Confirm"-->
+        <!--            android:layout_alignParentStart="true"-->
+        <!--            android:layout_alignParentEnd="true"-->
+        <!--            android:layout_marginStart="180dp"-->
+        <!--            android:layout_marginTop="0dp"-->
+        <!--            android:layout_marginEnd="20dp"-->
+        <!--            android:hint="d"-->
+        <!--            android:inputType="numberDecimal" />-->
+
+        <!--        <EditText-->
+        <!--            android:id="@+id/et_e"-->
+        <!--            android:layout_width="150sp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/et_c"-->
+        <!--            android:hint="e"-->
+        <!--            android:inputType="numberDecimal"-->
+        <!--            android:layout_marginTop="0dp"-->
+        <!--            />-->
+
+        <!--        <EditText-->
+        <!--            android:id="@+id/et_m0"-->
+        <!--            android:layout_width="173dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/et_d"-->
+        <!--            android:layout_alignParentStart="true"-->
+        <!--            android:layout_alignParentEnd="true"-->
+        <!--            android:layout_marginStart="180dp"-->
+        <!--            android:layout_marginTop="0dp"-->
+        <!--            android:layout_marginEnd="20dp"-->
+        <!--            android:hint="m0"-->
+        <!--            android:inputType="numberDecimal" />-->
+
+        <!--        <EditText-->
+        <!--            android:id="@+id/et_S"-->
+        <!--            android:layout_width="150sp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/et_e"-->
+        <!--            android:hint="S"-->
+        <!--            android:inputType="numberDecimal"-->
+
+        <!--            />-->
+
+        <!--        <EditText-->
+        <!--            android:id="@+id/et_Cx"-->
+        <!--            android:layout_width="173dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/et_m0"-->
+        <!--            android:layout_alignParentStart="true"-->
+        <!--            android:layout_alignParentEnd="true"-->
+        <!--            android:layout_marginStart="180dp"-->
+
+        <!--            android:layout_marginEnd="20dp"-->
+        <!--            android:hint="Cx"-->
+        <!--            android:inputType="numberDecimal" />-->
+
+        <!--        <EditText-->
+        <!--            android:id="@+id/et_Cy"-->
+        <!--            android:layout_width="150sp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/et_S"-->
+        <!--            android:hint="Cy"-->
+        <!--            android:inputType="numberDecimal"-->
+        <!--            />-->
+
+        <!--        <EditText-->
+        <!--            android:id="@+id/et_T"-->
+        <!--            android:layout_width="173dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/et_Cx"-->
+        <!--            android:layout_alignParentStart="true"-->
+        <!--            android:layout_alignParentEnd="true"-->
+        <!--            android:layout_marginStart="180dp"-->
+
+        <!--            android:layout_marginEnd="20dp"-->
+        <!--            android:hint="T"-->
+        <!--            android:inputType="numberDecimal" />-->
+        <!--        <EditText-->
+        <!--            android:id="@+id/et_teta"-->
+        <!--            android:layout_width="150sp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/et_Cy"-->
+        <!--            android:hint="teta"-->
+        <!--            android:inputType="numberDecimal"-->
+
+        <!--            />-->
+
+        <!--        <EditText-->
+        <!--            android:id="@+id/et_phi"-->
+        <!--            android:layout_width="173dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/et_T"-->
+        <!--            android:layout_alignParentStart="true"-->
+        <!--            android:layout_alignParentEnd="true"-->
+        <!--            android:layout_marginStart="180dp"-->
+        <!--            android:layout_marginEnd="20dp"-->
+        <!--            android:hint="phi"-->
+        <!--            android:inputType="numberDecimal" />-->
+        <!--        <EditText-->
+        <!--            android:id="@+id/et_f"-->
+        <!--            android:layout_width="150sp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/et_teta"-->
+        <!--            android:hint="f"-->
+        <!--            android:inputType="numberDecimal"-->
+        <!--            />-->
+
+        <!--        <EditText-->
+        <!--            android:id="@+id/et_Lvpp"-->
+        <!--            android:layout_width="173dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/et_phi"-->
+        <!--            android:layout_alignParentStart="true"-->
+        <!--            android:layout_alignParentEnd="true"-->
+        <!--            android:layout_marginStart="180dp"-->
+        <!--            android:layout_marginEnd="20dp"-->
+        <!--            android:hint="Lvpp"-->
+        <!--            android:inputType="numberDecimal" />-->
+        <!--        <EditText-->
+        <!--            android:id="@+id/et_lat_start"-->
+        <!--            android:layout_width="150sp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/et_f"-->
+        <!--            android:hint="lat_start"-->
+        <!--            android:inputType="numberDecimal"-->
+        <!--            />-->
+
+        <!--        <EditText-->
+        <!--            android:id="@+id/et_long_start"-->
+        <!--            android:layout_width="173dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/et_Lvpp"-->
+        <!--            android:layout_alignParentStart="true"-->
+        <!--            android:layout_alignParentEnd="true"-->
+        <!--            android:layout_marginStart="180dp"-->
+        <!--            android:layout_marginEnd="20dp"-->
+        <!--            android:hint="long_start"-->
+        <!--            android:inputType="numberDecimal" />-->
+        <!--        <EditText-->
+        <!--            android:id="@+id/et_abr"-->
+        <!--            android:layout_width="173dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/et_lat_start"-->
+        <!--            android:layout_alignParentStart="true"-->
+        <!--            android:layout_alignParentEnd="true"-->
+        <!--            android:layout_marginStart="180dp"-->
+        <!--            android:layout_marginEnd="20dp"-->
+        <!--            android:hint="abr"-->
+        <!--            android:inputType="numberDecimal" />-->
+        <!--        <EditText-->
+        <!--            android:id="@+id/et_w"-->
+        <!--            android:layout_width="173dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/et_abr"-->
+        <!--            android:layout_alignParentStart="true"-->
+        <!--            android:layout_alignParentEnd="true"-->
+        <!--            android:layout_marginStart="180dp"-->
+        <!--            android:layout_marginEnd="20dp"-->
+        <!--            android:hint="w"-->
+        <!--            android:inputType="numberDecimal" />-->
+        <!--        <EditText-->
+        <!--            android:id="@+id/et_fpr"-->
+        <!--            android:layout_width="150sp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/et_lat_start"-->
+        <!--            android:hint="fpr"-->
+        <!--            android:inputType="numberDecimal"-->
+        <!--            />-->
+
+        <!--        <EditText-->
+        <!--            android:id="@+id/et_Cxpr"-->
+        <!--            android:layout_width="150sp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/et_fpr"-->
+        <!--            android:hint="Cxpr"-->
+        <!--            android:inputType="numberDecimal"-->
+        <!--            />-->
+        <!--        <EditText-->
+        <!--            android:id="@+id/et_Cypr"-->
+        <!--            android:layout_width="150sp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/et_Cxpr"-->
+        <!--            android:hint="Cypr"-->
+        <!--            android:inputType="numberDecimal"-->
+        <!--            />-->
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

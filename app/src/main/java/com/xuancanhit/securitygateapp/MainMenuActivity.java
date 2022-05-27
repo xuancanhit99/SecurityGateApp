@@ -36,6 +36,14 @@ public class MainMenuActivity extends AppCompatActivity {
             }
         });
 
+        btnMenuGate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainMenuActivity.this, MainActivity2.class));
+                finish();
+            }
+        });
+
         btnMenuExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
