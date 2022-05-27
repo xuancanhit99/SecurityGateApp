@@ -20,6 +20,7 @@ public class GarageActivity extends AppCompatActivity {
     private Button btnValue, btnUp, btnDown, btnA, btnB, btnC, btnD;
     private TextView tvPtOpen;
     private ImageView ivBack;
+    
 
     ProgressBar mProgressBar;
     CountDownTimer mCountDownTimer;
