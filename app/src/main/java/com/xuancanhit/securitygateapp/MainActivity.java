@@ -10,7 +10,7 @@ import android.os.Looper;
 public class MainActivity extends AppCompatActivity {
 
     //Time Splash before run app
-    int splash_time = 1500;
+    int splash_time = 500;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(MainActivity.this, MainMenuActivity.class));
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                //startActivity(new Intent(MainActivity.this, MainMenuActivity.class));
                 finish();
             }
         }, splash_time);
