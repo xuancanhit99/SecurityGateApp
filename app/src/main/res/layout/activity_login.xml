@@ -63,7 +63,7 @@
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/iv_stu_login_close"
+                android:id="@+id/iv_user_login_close"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"

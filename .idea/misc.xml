@@ -24,6 +24,14 @@
         <entry key="..\:/Users/daota/AndroidStudioProjects/SecurityGateApp/app/src/main/res/layout/activity_garage.xml" value="0.5432291666666667" />
         <entry key="..\:/Users/daota/AndroidStudioProjects/SecurityGateApp/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/daota/AndroidStudioProjects/SecurityGateApp/app/src/main/res/layout/activity_main_menu.xml" value="0.5432291666666667" />
+        <entry key="app/src/main/res/layout/activity_door.xml" value="0.18135764944275581" />
+        <entry key="app/src/main/res/layout/activity_garage.xml" value="0.34148550724637683" />
+        <entry key="app/src/main/res/layout/activity_gate.xml" value="0.18135764944275581" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.34148550724637683" />
+        <entry key="app/src/main/res/layout/activity_main3.xml" value="0.34148550724637683" />
+        <entry key="app/src/main/res/layout/activity_main_menu.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/activity_sound.xml" value="0.34148550724637683" />
+        <entry key="app/src/main/res/layout/layout_user_login.xml" value="0.3205001831054688" />
       </map>
     </option>
   </component>
@@ -32,5 +40,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.34148550724637683" />
+      </ProjectState>
+    </option>
   </component>
 </project>
